@@ -3,6 +3,11 @@ Rails.application.routes.draw do
 
   constraints(Subdomain) do
     get '/' => 'sites#show'
+    get '/edit' => 'sites#edit'
+  end
+
+  scope :path => "(:locale)" do
+    resources :sites
   end
 
   mount Sidekiq::Web => '/sidekiq'

@@ -6,7 +6,7 @@ require 'rails/all'
 # you've limited to :test, :development, or :production.
 Bundler.require(*Rails.groups)
 
-module YourNewAppName
+module FifthFloorProQuiz
   class Application < Rails::Application
     config.action_mailer.delivery_method = :amazon_ses
 
@@ -31,7 +31,8 @@ module YourNewAppName
 
     # The default locale is :en and all translations from config/locales/*.rb,yml are auto loaded.
     # config.i18n.load_path += Dir[Rails.root.join('my', 'locales', '*.{rb,yml}').to_s]
-    # config.i18n.default_locale = :de
+    config.i18n.default_locale = :tw
+    I18n.available_locales = [:tw, :jp, :us]
 
     # disable after_commit & after_rollback of model callbacks
     config.active_record.raise_in_transactional_callbacks = true
